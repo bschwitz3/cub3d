@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 15:14:52 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/13 18:05:56 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/04/03 13:04:37 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/04/18 17:21:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*int	ft_strlen(const char *s)
+#include "../cub3d.h"
+
+int	ft_strlen2(char *str)
 {
+	int	j;
 	int	i;
 
+	j = 0;
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '.')
+		i++;
+	while (str[i] != '\0')
 	{
 		i++;
+		j++;
 	}
-	return (i);
-}*/
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = -1;
-	if (!str)
-		return (0);
-	while (str[++i])
-		;
-	return (i);
+	return (j);
 }

@@ -6,7 +6,7 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 13:49:14 by bschwitz          #+#    #+#              #
-#    Updated: 2023/01/16 18:00:36 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/05/08 13:40:25 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,36 @@ MLX_LIB		= $(MLX_PATH)/libmlx.a
 LIBFT_PATH	= libft/
 LIBFT_LIB	= $(LIBFT_PATH)/libft.a
 
-NAME	= cub3d
+NAME	= cub3D
 
 SRCS	= main.c \
+			gnl/get_next_line.c \
+			gnl/get_next_line_utils.c \
+			parsing/parse.c \
+			parsing/init.c \
+			parsing/init2.c \
+			parsing/parse_info.c \
+			parsing/parse_info2.c \
+			parsing/parse_map.c \
+			parsing/parse_map2.c \
+			utils/utils.c \
+			utils/error.c \
+			utils/texture.c \
+			utils/texture2.c \
+			utils/mlx_utils.c \
+			utils/minimap.c \
+			raycasting/raycasting.c \
+			raycasting/raycasting_utils.c \
+			raycasting/sprites.c \
+			raycasting/raycasting_moves.c \
+			
 			
 
 OBJS	= ${SRCS:.c=.o}
 
 CC 		= gcc
 
-CFLAGS	= -Wall -Werror -Wextra 
-
-RM		= rm -rf
+CFLAGS	= -Wall -Werror -Wextra
 
 all:	subsystems ${NAME}
 
@@ -40,7 +58,7 @@ subsystems:
 
 ${NAME}:	${OBJS}
 			$(CC) $(CFLAGS) \
-			-Lmlx -lmlx -framework OpenGL -framework AppKit \
+			-g -Lmlx -lmlx -framework OpenGL -framework AppKit \
 			$(OBJS) \
 			$(MLX_LIB) $(LIBFT_LIB) \
 			-o $(NAME)
@@ -56,5 +74,8 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+norm:		
+			norminette ${SRCS} cub3d.h gnl/get_next_line.h ${LIBFT_PATH}
 
 ./PHONY:	all clean fclean re

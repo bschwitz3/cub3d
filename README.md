@@ -28,3 +28,5 @@ cub3D pays homage to the pioneering first-person shooter, Wolfenstein 3D, develo
 **In Conclusion 📜**
 
 cub3D offers a remarkable opportunity to explore the world of 3D game development using ray-casting techniques. Dive into this project, relive the history of first-person shooters, and bring your maze to life. Whether you stick to the basics or dive into bonus features, you're in for an exciting adventure! Happy coding! 👨‍💻🌟🎮
+
+I collaborated with @djidji02 on this project.
